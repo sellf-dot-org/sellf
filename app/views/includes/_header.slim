@@ -1,0 +1,23 @@
+nav.navbar.navbar-default
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.pull-left href="/"
+        img#logo src="/images/logo/sellf-text.svg"
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="/sell" Sell
+        li
+          a href="/buy" Buy
+        li
+          a href="/about" About
+        li
+          = link_to "Create Account", new_user_path
+        li
+          = link_to "Log In", new_sessions_path
+

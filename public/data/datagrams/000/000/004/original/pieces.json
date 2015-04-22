@@ -1,0 +1,55 @@
+{
+  "tanner": {
+    "title": "For the archive #4",
+    "year": 2015,
+    "artist": "Tanner Charles",
+    "slug": "tanner",
+    "media": "Single-channel video"
+  },
+  "jaclyn": {
+    "title": "Wandering Star",
+    "year": 2015,
+    "artist": "Jaclyn Mednicov",
+    "slug": "jaclyn",
+    "media": "Single-channel video and speakers",
+    "statement": "The making of *Wandering Star* begins with instinctual video documentation taken while walking through the aftermath of a snowstorm. The original footage is cut, manipulated, and distorted. Using color, texture, and space through addition and subtraction, *Wandering Star* is meant to be at once familiar and unfamiliar."
+  },
+  "jerico": {
+    "title": "Fishers of Men",
+    "year": 2015,
+    "artist": "Jerico Domingo",
+    "slug": "jerico",
+    "media": "Plywood, fish, video projection",
+    "statement": "􏰔􏰕􏰒􏰊􏰄􏰁􏰌􏰑􏰌􏰉􏰔􏰕􏰒􏰊􏰄􏰁􏰌􏰑􏰌􏰉􏰖􏰇􏰉􏰒􏰕􏰓􏰅􏰉􏰇􏰕􏰉􏰇􏰕􏰓􏰇􏰌􏰓􏰗􏰘􏰍􏰓􏰒􏰌􏰕􏰁􏰇􏰙􏰄􏰏􏰑􏰍􏰇􏰙􏰄􏰏􏰇􏰒􏰊􏰍􏰇􏰖􏰄􏰏􏰕􏰁􏰌􏰒􏰂􏰇􏰄􏰙􏰇􏰚􏰌􏰁􏰁􏰌􏰄􏰓􏰉􏰇􏰄􏰙􏰇􏰎􏰍􏰄􏰎􏰁􏰍􏰛􏰇􏰜􏰍Catholicism stands as an influential force for the morality of billions of people. Because of this impact, followers tend to disregard the flaws within this faith. In his new video installation, Jerico Domingo investigates the concepts of masculinity perpetuated by Catholicism and its influence on men."
+  },
+  "andrew": {
+    "title": "sellf.org",
+    "year": 2015,
+    "artist": "Andrew Monks",
+    "slug": "andrew",
+    "statement": "Presentations at 6:30, 7:30, and 8:30 pm"
+  },
+  "chris": {
+    "title": "Yarbus' Folly",
+    "year": 2015,
+    "artist": "Chris J Staats",
+    "slug": "chris",
+    "media": "Wood, Acrylic, and one-way mirror film",
+    "statement": "􏰟􏰕􏰏􏰚􏰘􏰉􏰠􏰇*Yarbus' Folly* is a structure the viewer can enter and reflect upon the gallery in isolation, creating narratives within the space of the gallery. The onlooker should spend at least five minutes looking through the window onto the space."
+  },
+  "lj": {
+    "title": "Level 1",
+    "year": 2015,
+    "artist": "LJ Frezza",
+    "slug": "lj",
+    "media": "Single-channel video, confined space, gameplay footage from *The Elder Scrolls V: Skyrim* (2011)"
+  },
+  "maurice": {
+    "title": "Seesound",
+    "year": 2015,
+    "artist": "Maurice Hampton",
+    "slug": "maurice",
+    "media": "Multi-channel sound and light installation",
+    "statement": "Scientist Hans Jenny, widely considered to be the father of Cymatics conducted a series of experiments observing similarities between naturally occurring biological fractal systems and patterns produced in different liquids through sonic vibration. Based on these observations he hypothesized that all physical matter was formed by vibrations on a micro to macrocosmic scale."
+  }
+}

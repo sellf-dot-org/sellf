@@ -1,0 +1,20 @@
+h2 Available Datasets
+ul
+  - User.all.each do |account|
+    li
+      h3
+        = account.name + " "
+        span.small
+          / = pretty_money account.asking_price
+          form action="/charge" method="POST"
+            / script.stripe-button src="https://checkout.stripe.com/checkout.js" data-key="pk_test_lf3SMglj5Ng56vcgPMvVWmaR" data-image="/images/sellf-register.png" data-name="sellf" data-description=account.name data-amount=account.asking_price
+      ul
+        - account.data.each do |datum|
+          li
+            h4
+              = datum.title + " "
+              span.small
+                / = pretty_money datum.asking_price
+            = datum.description
+            form action="/charge" method="POST"
+              / script.stripe-button src="https://checkout.stripe.com/checkout.js" data-key="pk_test_lf3SMglj5Ng56vcgPMvVWmaR" data-image="/images/sellf-register.png" data-name="sellf" data-description=datagram.title data-amount=datagram.asking_price
