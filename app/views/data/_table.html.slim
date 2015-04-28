@@ -1,0 +1,14 @@
+table.tablesaw.tablesaw-stack data-tablesaw-mode="stack"
+  thead
+    tr
+      th title
+      th description
+      th user
+      th price
+      th
+      th
+      th
+      th
+  tbody
+    - table.each do |datum|
+      = render partial: "#{datum.datable.class.to_s.pluralize}/row", object: datum

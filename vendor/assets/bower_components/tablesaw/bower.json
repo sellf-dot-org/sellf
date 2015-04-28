@@ -1,0 +1,19 @@
+{
+	"name": "filament-tablesaw",
+	"version": "1.0.4",
+	"main": [
+		"dist/tablesaw.js",
+		"dist/tablesaw.css",
+		"dist/icons/**"
+	],
+	"ignore": [
+		"**/.*"
+	],
+	"dependencies": {
+		"jquery": ">=1.9.1",
+		"respond": "~1.4.2"
+	},
+	"devDependencies": {
+		"qunit": "1.11.0"
+	}
+}

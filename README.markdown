@@ -1,62 +1,24 @@
 # sellf.org
 
-data
+![uml diagram](uml.png)
 
-can be a file, or a subscription
+## todo
 
-can also be a set containing other files or subscriptions
+### rent
 
-user
+*   $18 [rental coffee](http://www.chicagoeventrentals.com/services-products/party-banquets/coffee-tea-service.aspx)
+*   $15 [projection screen](http://www.chicagoeventrentals.com/services-products/party-banquets/audio-visual-equipment-conference.aspx)
+*   $10 [two card tables](http://www.chicagoeventrentals.com/services-products/chair-table-rentals/table-rentals/complete-table-list.aspx)
 
-is a buyer and a seller
+### buy
 
-can have data [set or file or subscription]
+*   $40 [buttons](http://www.busybeaver.net/)
+*   actual coffee grounds
+*   paperware
 
-can buy data  [set or file or subscription]
+## resources
 
-two user:data associations:
+### stripe test info
 
-via Data or via Purchase
-
-also: user:user association; subscribe to all.
-
-maybe a user can have a Buyer a Seller or both
-User handles stripe, seller has Data, buyer has Purchases
-
-
-```ruby
-User
-    has_one :seller
-    has_one :buyer
-end
-
-Seller
-    has_many :data
-    belongs_to :user
-end
-
-Buyer
-    has_many :data
-    belongs_to :user
-end
-
-Datum
-    has_many :members, class_name: "Datum",
-                       foreign_key: "data_set_id"
-
-    belongs_to :data_set, class_name: "Datum"
-
-    has_one :seller
-    has_many :buyers
-
-    belongs_to :datable, polymorphic: true
-end
-
-File
-    belongs_to :datum, as :datable
-end
-
-Subscription
-    belongs_to :datum, as :datable
-end
-```
+*   **routing number**: `110000000`
+*   **account number (success)**: `000123456789`

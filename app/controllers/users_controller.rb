@@ -66,7 +66,7 @@ class UsersController < ApplicationController
       when 'connected'
         # Use the user-to-be-paid's access token
         # to make the charge directly on their account
-        charge = Stripe::Charge.create( charge_attrs, user.secret_key )
+        charge = Stripe::Charge.create( charge_attrs, user.stripe_secret_key )
       when 'platform'
         # Use the platform's access token, and specify the
         # connected account's user id as the destination so that

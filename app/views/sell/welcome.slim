@@ -1,0 +1,11 @@
+= render 'sell/copy'
+
+- if current_user
+  = render partial: 'users/user', object: @user
+- else
+  h3
+    = link_to "Create an account", new_user_path
+    > or
+    = link_to "log in", new_sessions_path
+    > to get started
+

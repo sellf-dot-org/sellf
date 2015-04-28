@@ -11,38 +11,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422192617) do
+ActiveRecord::Schema.define(version: 20150423003957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "data", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "datagram_file_name"
-    t.string   "datagram_content_type"
-    t.integer  "datagram_file_size"
-    t.datetime "datagram_updated_at"
+  create_table "accounts", force: :cascade do |t|
+    t.boolean  "active"
+    t.integer  "accountable_id"
+    t.string   "accountable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  add_index "data", ["user_id"], name: "index_data_on_user_id", using: :btree
+  add_index "accounts", ["accountable_type", "accountable_id"], name: "index_accounts_on_accountable_type_and_accountable_id", using: :btree
+
+  create_table "blobs", force: :cascade do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "data", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "price_cents"
+    t.integer  "datable_id"
+    t.string   "datable_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "data", ["datable_type", "datable_id"], name: "index_data_on_datable_type_and_datable_id", using: :btree
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "datum_id"
+    t.integer  "amount"
+    t.string   "currency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "purchases", ["datum_id"], name: "index_purchases_on_datum_id", using: :btree
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "publishable_key"
-    t.string   "secret_key"
-    t.string   "stripe_user_id"
     t.string   "currency"
+    t.string   "stripe_publishable_key"
+    t.string   "stripe_secret_key"
+    t.string   "stripe_user_id"
+    t.string   "stripe_account_type"
+    t.text     "stripe_account_status",  default: "{}"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "stripe_account_type"
-    t.text     "stripe_account_status", default: "{}"
   end
 
-  add_foreign_key "data", "users"
 end

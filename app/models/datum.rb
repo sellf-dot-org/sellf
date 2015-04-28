@@ -1,6 +1,10 @@
 class Datum < ActiveRecord::Base
+  has_many :purchases
   belongs_to :user
-  has_attached_file :datagram
-  validates_attachment_presence :datagram
-  do_not_validate_attachment_file_type :datagram
+
+  has_many :users, :through => :purchases, :as => :buyers
+
+  belongs_to :datable, :polymorphic => true
+
+  monetize :price_cents
 end

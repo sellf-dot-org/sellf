@@ -1,0 +1,12 @@
+tr
+  td = row.title
+  td = row.description
+  td = row.user
+  td = row.price
+  - if current_user == row.user
+    td = link_to 'Show', row
+    td = link_to 'Edit', edit_datum_path(row)
+    td = link_to 'Destroy', row, data: {:confirm => 'Are you sure?'}, :method => :delete
+    td = link_to 'Raw File', row.datable.file.url
+  - else
+    td = link_to 'Buy', row

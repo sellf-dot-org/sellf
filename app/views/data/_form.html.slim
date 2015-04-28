@@ -1,0 +1,15 @@
+= form_for @datum do |f|
+  h2 New Datum
+  - if @datum.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@datum.errors.count, "error")} prohibited this datum from being saved:"
+      ul
+        - @datum.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :description, class: 'col-xs-3 control-label'
+    .col-xs-9
+      = f.text_field :description, class: 'form-control', placeholder: 'Facts about this datum'
+
+  .actions = f.submit

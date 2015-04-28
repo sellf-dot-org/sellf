@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     user = User.find_by( email: params[:email].downcase )
     if user && user.authenticate( params[:password] )
       session[:user_id] = user.id
-      redirect_to users_path
+      redirect_to sell_path
     else
       flash[:error] = "Invalid email or password :("
       render action: 'new'
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   # Logout...
   def destroy
     session.delete :user_id
-    redirect_to root_path
+    redirect_to sell_path
   end
 
 end

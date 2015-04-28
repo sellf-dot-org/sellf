@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :blobs
+
+  resources :accounts
+
+  root to: 'sell#welcome', as: 'sell'
+  get '/buy' => 'data#index', as: 'buy'
+
   resources :data
 
-  root to: 'sell#index', as: 'sell'
-  get '/buy' => 'buy#index', as: 'buy'
-
   resources :users do
+    # resources :data
     member do
       post :pay
       post :subscribe

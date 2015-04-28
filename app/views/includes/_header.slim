@@ -8,16 +8,27 @@ nav.navbar.navbar-default
         span.icon-bar
       a.pull-left href="/"
         img#logo src="/images/logo/sellf-text.svg"
+
+
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
+
+        - if current_user
+          p.navbar-text
+            span.glyphicon.glyphicon-chevron-right
+            span.hidden-xs = " Logged in as "
+            a href=user_path(current_user)
+              strong = current_user.name
         li
-          a href="/sell" Sell
+          = link_to "Sell", sell_path
         li
-          a href="/buy" Buy
-        li
-          a href="/about" About
-        li
-          = link_to "Create Account", new_user_path
-        li
-          = link_to "Log In", new_sessions_path
+          = link_to "Buy", buy_path
+        - if current_user
+          li
+            = link_to "Log Out", destroy_sessions_path
+        - else
+          li
+            = link_to "Log In", new_sessions_path
+          li
+            = link_to "Create Account", new_user_path
 

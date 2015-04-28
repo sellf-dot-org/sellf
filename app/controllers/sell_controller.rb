@@ -1,4 +1,5 @@
 class SellController < ApplicationController
-  def index
+  def welcome
+    @user = current_user if current_user
   end
 end

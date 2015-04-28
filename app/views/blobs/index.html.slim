@@ -1,0 +1,25 @@
+h1 Listing blobs
+
+table
+  thead
+    tr
+      th user
+      th datum
+      th file
+      th
+      th
+      th
+
+  tbody
+    - @blobs.each do |blob|
+      tr
+        td = blob.datum.user
+        td = blob.datum
+        td = link_to 'Raw File', blob.file.url
+        td = link_to 'Show', blob
+        td = link_to 'Edit', edit_blob_path(blob)
+        td = link_to 'Destroy', blob, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Blob', new_blob_path

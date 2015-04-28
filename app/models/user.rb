@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :data
+  has_many :purchases
+
+  has_many :properties, :through => :purchases, :class_name => :datum
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
@@ -7,7 +10,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   # General 'has a Stripe account' check
-  def connected?; !stripe_user_id.nil?; end
+  def connected_to_stripe?; !stripe_user_id.nil?; end
 
   # Stripe account type checks
   def managed?; stripe_account_type == 'managed'; end

@@ -38,8 +38,8 @@ class StripeManaged < Struct.new( :user )
         currency: @account.default_currency,
         stripe_account_type: 'managed',
         stripe_user_id: @account.id,
-        secret_key: @account.keys.secret,
-        publishable_key: @account.keys.publishable,
+        stripe_secret_key: @account.keys.secret,
+        stripe_publishable_key: @account.keys.publishable,
         stripe_account_status: account_status
       )
     end

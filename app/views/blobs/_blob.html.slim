@@ -1,0 +1,16 @@
+p#notice = notice
+dl.dl-horizontal
+  dt title
+  dd = blob.datum.title
+
+  dt user
+  dd = blob.datum.user.name
+
+  dt description
+  dd = blob.datum.description
+
+  dt asking price
+  dd = blob.datum.price
+
+  dt raw file
+  dd = link_to "Raw File", blob.file.url

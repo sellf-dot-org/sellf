@@ -15,7 +15,7 @@ class HooksController < ApplicationController
     # We'll end up with one of:
     #   args = [ 'EVENT_ID' ]
     #   args = [ 'EVENT_ID', 'ACCESS_TOKEN' ]
-    args = [ params[:id], user.try(:secret_key) ].compact
+    args = [ params[:id], user.try(:stripe_secret_key) ].compact
 
     # Retrieve the event from Stripe so that we can be
     # sure it wasn't spoofed/faked by someone being mean.

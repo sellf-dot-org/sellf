@@ -1,0 +1,35 @@
+- if flash[:notice]
+  .alert.alert-info
+    p = flash[:notice].html_safe
+- if flash[:error]
+  .alert.alert-danger
+    p = flash[:error].html_safe
+
+h1 = user.name
+h4 = user.email
+
+
+- if user.connected_to_stripe?
+  - if is_myself?
+    - # you're looking at your own 'profile', so you can
+    - # update/deauthorize/etc your Stripe account
+    = render partial: 'users/settings'
+  - else
+    = render partial: 'users/pay'
+
+- else # not connected to stripe
+  - if is_myself? && !current_user.connected_to_stripe?
+    - # you're looking at your own 'profile', so you can
+    - # create/connect/etc your Stripe account
+    = render partial: 'users/connect'
+  - else
+    .panel.panel-danger.not-connected
+      .panel-body
+        h3 Not Connected
+        p
+          This user is not connected to Stripe, so
+          you can't pay them.
+
+
+h3 uploaded data
+= render partial: 'data/table', object: user.data

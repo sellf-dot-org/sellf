@@ -1,4 +1,4 @@
-## For buyers
+# Buy Data
 
 Data mining allows us to advertise more cheaply and effectively than ever thought possible. Don't just target demographics, target conditions: `just stopped at atm`, `good mood`, `hungry`, `drunk`.
 

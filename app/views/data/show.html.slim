@@ -1,0 +1,6 @@
+= render partial: "#{@datum.datable.class.to_s}s/#{@datum.datable.class.to_s}".downcase, object: @datum.datable
+
+p
+  = link_to 'Edit', edit_datum_path(@datum)
+  > |
+  = link_to 'Back', data_path
