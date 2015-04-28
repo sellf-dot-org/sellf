@@ -32,7 +32,7 @@ class HooksController < ApplicationController
       # our application. We can't look up and verify the event
       # because the event belongs to the connected account, and we're
       # no longer authorized to access their account!
-      if user && user.connected?
+      if user && user.connected_to_stripe?
         connector = StripeConnect.new( user )
         connector.deauthorized
       end
@@ -51,7 +51,7 @@ class HooksController < ApplicationController
       # handler will hopefully look like some day, where
       # the event is still accessible somehow and we verified
       # it came from Stripe.
-      if user && user.connected?
+      if user && user.connected_to_stripe?
         user.manager.deauthorized
       end
 
@@ -59,7 +59,7 @@ class HooksController < ApplicationController
       # This webhook is used for standalone and managed
       # accounts. It will notify you about new information
       # required for the account to remain in good standing.
-      if user && user.connected?
+      if user && user.connected_to_stripe?
         # we don't actually need to pass the event here
         # we'll request the account details directly inside
         # the manager
