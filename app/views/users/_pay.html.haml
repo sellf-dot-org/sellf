@@ -58,7 +58,7 @@
   // we need both publishable keys here.
   window.publishable = {
     platform: #{Rails.application.secrets.stripe_publishable_key.to_json},
-    connected: #{@user.publishable_key.to_json}
+    connected: #{@user.stripe_publishable_key.to_json}
   };
   window.currentUserEmail = #{current_user.email.to_json};
   window.payPath = #{pay_user_path( @user ).to_json};

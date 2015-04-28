@@ -1,10 +1,7 @@
 .panel.panel-primary
   .panel-body
     - if current_user.managed?
-      %h2 Stripe Account Management
-      %p
-        Account Type:
-        %strong Managed
+      %h2 Seller Settings
 
       - # the current account status, whether the
       - # account can make charges or can receive transfers
@@ -24,6 +21,9 @@
       - # if we need more information from this user to keep
       - # their account in good standing
       - if @user.stripe_account_status['fields_needed'].any?
+        %p
+          Before people can pay you, we'll need some information.
+        %strong This data is never shared or sold.
         %hr
         .needed
           = form_for @user, html: { class: 'form-horizontal' } do |f|
@@ -64,7 +64,7 @@
               - # this account needs legal entity info
               - if manager.needs? 'legal_entity.'
                 %li.list-group-item
-                  %h3 Legal Entity
+                  %h3 Personal Info
                   .form-group
                     %label.control-label.col-xs-12.col-sm-3 First Name:
                     .col-xs-12.col-sm-9

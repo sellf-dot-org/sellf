@@ -6,10 +6,6 @@ class BlobsController < ApplicationController
     @blobs = Blob.all
   end
 
-  # GET /blobs/1
-  def show
-  end
-
   # GET /blobs/new
   def new
     @user = current_user
@@ -30,7 +26,7 @@ class BlobsController < ApplicationController
     @datum.user = current_user
 
     if @blob.save && @datum.save
-      redirect_to @blob, notice: 'Blob was successfully created.'
+      redirect_to @datum, notice: 'Blob was successfully created.'
     else
       render :new
     end

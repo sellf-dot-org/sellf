@@ -4,8 +4,7 @@ class CreatePurchases < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.belongs_to :datum, index: true
 
-      t.integer :amount
-      t.string :currency
+      t.integer :amount_cents
 
       t.timestamps null: false
     end

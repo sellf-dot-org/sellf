@@ -1,0 +1,6 @@
+tr
+  td = link_to row.datum.title, row.datum
+  td = row.created_at
+  td = link_to row.user.name, row.user
+  td = link_to row.datum.user.name, row.datum.user
+  td = row.amount

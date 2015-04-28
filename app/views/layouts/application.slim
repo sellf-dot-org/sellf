@@ -11,6 +11,11 @@ html
   body
     = render 'includes/header'
     .container
+      - if flash[:notice]
+        .alert.alert-info = flash[:notice].html_safe
+      - if flash[:error]
+        .alert.alert-danger = flash[:error].html_safe
+
       == yield
     = render 'includes/footer'
     = render 'includes/scripts'

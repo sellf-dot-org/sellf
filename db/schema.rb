@@ -51,10 +51,9 @@ ActiveRecord::Schema.define(version: 20150423003957) do
   create_table "purchases", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "datum_id"
-    t.integer  "amount"
-    t.string   "currency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "amount_cents"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "purchases", ["datum_id"], name: "index_purchases_on_datum_id", using: :btree

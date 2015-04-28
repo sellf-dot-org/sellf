@@ -22,3 +22,4 @@
 
 *   **routing number**: `110000000`
 *   **account number (success)**: `000123456789`
+*   **VISA (success)**: `4242424242424242`

@@ -1,4 +1,10 @@
-= render 'sell/copy'
+.jumbotron
+  = render 'sell/copy'
+  .btn-group
+    a.btn.btn-primary.btn-lg href=new_blob_url
+      > Upload Dataset
+    a.btn.btn-info.btn-lg href="#"
+      > Connect Account
 
 - if current_user
   = render partial: 'users/user', object: @user

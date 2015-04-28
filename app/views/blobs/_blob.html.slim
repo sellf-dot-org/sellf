@@ -1,10 +1,10 @@
 p#notice = notice
 dl.dl-horizontal
   dt title
-  dd = blob.datum.title
+  dd = link_to blob.datum.title, blob.datum
 
   dt user
-  dd = blob.datum.user.name
+  dd = link_to blob.datum.user.name, blob.datum.user
 
   dt description
   dd = blob.datum.description
@@ -12,5 +12,13 @@ dl.dl-horizontal
   dt asking price
   dd = blob.datum.price
 
-  dt raw file
-  dd = link_to "Raw File", blob.file.url
+  - if blob.datum.user == current_user || Purchase.where(user: current_user, datum: blob.datum).exists?
+    dt raw file
+    dd = link_to "Raw File", blob.file.url
+
+  - else
+    dd
+      = form_tag buy_datum_path( blob.datum ) do
+        .indicator
+        = hidden_field_tag :token
+        button.btn.btn-primary.pay-button Buy

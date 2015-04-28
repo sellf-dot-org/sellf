@@ -10,7 +10,7 @@ class StripeController < ApplicationController
     )
 
     if account
-      flash[:notice] = "Managed Stripe account created! <a target='_blank' rel='platform-account' href='https://dashboard.stripe.com/test/applications/users/#{account.id}'>View in dashboard &raquo;</a>"
+      flash[:notice] = "Managed Stripe account created!"
     else
       flash[:error] = "Unable to create Stripe account!"
     end
@@ -25,7 +25,7 @@ class StripeController < ApplicationController
     account = connector.create_account!( params[:country] )
 
     if account
-      flash[:notice] = "Standalone Stripe account created! <a target='_blank' rel='platform-account' href='https://dashboard.stripe.com/test/applications/users/#{account.id}'>View in dashboard &raquo;</a>"
+      flash[:notice] = "Standalone Stripe account created!"
     else
       flash[:error] = "Unable to create Stripe account!"
     end

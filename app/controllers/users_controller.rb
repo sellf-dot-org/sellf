@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.create( user_params )
     session[:user_id] = @user.id
     if @user.valid?
-      redirect_to user_path( @user )
+      redirect_to sell_path
     else
       render action: 'new'
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def update
     manager = current_user.manager
     manager.update_account! params: params
-    redirect_to user_path( current_user )
+    redirect_to sell_path
   end
 
   # Show a user's profile page.
@@ -75,14 +75,14 @@ class UsersController < ApplicationController
         charge = Stripe::Charge.create( charge_attrs )
       end
 
-      flash[:notice] = "Charged successfully! <a target='_blank' rel='#{params[:charge_on]}-account' href='https://dashboard.stripe.com/test/payments/#{charge.id}'>View in dashboard &raquo;</a>"
+      flash[:notice] = "Charged successfully!"
 
     rescue Stripe::CardError => e
       error = e.json_body[:error][:message]
       flash[:error] = "Charge failed! #{error}"
     end
 
-    redirect_to user_path( user )
+    redirect_to sell_path
   end
 
   # Subscribe the currently logged in user to
@@ -109,16 +109,16 @@ class UsersController < ApplicationController
           plan: params[:plan],
           application_fee_percent: fee_percent
         },
-        user.secret_key
+        user.stripe_secret_key
       )
-      flash[:notice] = "Subscribed! <a target='_blank' rel='platform-account' href='https://dashboard.stripe.com/test/customers/#{customer.id}'>View in dashboard &raquo;</a>"
+      flash[:notice] = "Subscribed!"
 
     rescue Stripe::CardError => e
       error = e.json_body[:error][:message]
       flash[:error] = "Charge failed! #{error}"
     end
 
-    redirect_to user_path( user )
+    redirect_to sell_path
   end
 
   private

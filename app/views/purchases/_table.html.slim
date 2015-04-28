@@ -1,0 +1,11 @@
+table.tablesaw.tablesaw-stack data-tablesaw-mode="stack"
+  thead
+    tr
+      th datum
+      th timestamp
+      th buyer
+      th seller
+      th amount
+  tbody
+    - table.each do |purchase|
+      = render partial: "purchases/row", object: purchase

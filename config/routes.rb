@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :purchases
+
   resources :blobs
 
   resources :accounts
@@ -6,7 +8,11 @@ Rails.application.routes.draw do
   root to: 'sell#welcome', as: 'sell'
   get '/buy' => 'data#index', as: 'buy'
 
-  resources :data
+  resources :data do
+    member do
+      post :buy
+    end
+  end
 
   resources :users do
     # resources :data
