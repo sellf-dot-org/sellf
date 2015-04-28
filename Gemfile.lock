@@ -308,6 +308,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
+    yui-compressor (0.12.0)
 
 PLATFORMS
   ruby
@@ -337,3 +338,4 @@ DEPENDENCIES
   stripe
   thin
   uglifier
+  yui-compressor

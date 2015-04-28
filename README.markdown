@@ -2,6 +2,23 @@
 
 ![uml diagram](uml.png)
 
+## develop
+
+    git pull
+    psql --command 'CREATE_DATABASE sellf_development;'
+    bundle exec rake bower:install
+    bundle exec rake db:migrate
+    bundle exec rails s
+
+## deploy
+
+    git pull
+    heroku create <name>
+    git push heroku
+    heroku run bundle exec rake db:migrate
+    heroku config:add HOST=https://<name>.herokuapp.com
+    heroku open
+
 ## todo
 
 ### rent
