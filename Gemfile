@@ -4,8 +4,12 @@ gem 'rails', '4.2'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg'
 gem 'thin'
-gem 'yui-compressor'
+
 gem 'uglifier'
+gem 'cssminify'
+
+gem 'le'
+gem 'newrelic_rpm'
 
 gem 'stripe'
 gem 'oauth2'

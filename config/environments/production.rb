@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.serve_static_assets = false
 
   config.eager_load = true
 
@@ -15,6 +16,6 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  config.assets.css_compressor = :yui
+  config.assets.css_compressor = CSSminify.new
   config.assets.js_compressor = :uglifier
 end
