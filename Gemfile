@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2'
+gem 'rails_12factor'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg'
 gem 'thin'
