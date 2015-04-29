@@ -17,7 +17,7 @@ gem 'oauth2'
 gem 'money-rails'
 
 gem 'paperclip', '~> 4.2'
-gem 'fog'
+gem 'aws-sdk'
 
 gem 'bower-rails', '~>0.9.2'
 gem 'kramdown-rails'

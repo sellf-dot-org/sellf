@@ -16,8 +16,5 @@ Bundler.require(*Rails.groups)
 
 module RailsStripeConnectExample
   class Application < Rails::Application
-    config.github_url = 'https://github.com/rfunduk/rails-stripe-connect-example'
-
-    config.paperclip_defaults = {:storage => :fog, :fog_credentials => {:provider => "Local", :local_root => "#{Rails.root}/public"}, :fog_directory => "", :fog_host => ENV["HOST"]}
   end
 end
