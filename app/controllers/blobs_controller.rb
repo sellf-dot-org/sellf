@@ -1,5 +1,6 @@
 class BlobsController < ApplicationController
   before_action :set_blob, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
   # GET /blobs
   def index

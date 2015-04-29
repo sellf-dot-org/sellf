@@ -1,5 +1,6 @@
 class DataController < ApplicationController
   before_action :set_datum, only: [:show, :edit, :update, :destroy, :buy]
+  before_action :require_user, except: [:index]
 
   # GET /data
   # list of data
