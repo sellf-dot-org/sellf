@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.serve_static_assets = false
+  config.serve_static_files = true
 
   config.eager_load = true
 
@@ -15,6 +15,13 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+
+  # response to: DEPRECATION WARNING: Currently, Active Record
+  # suppresses errors raised within `after_rollback`/`after_commit`
+  # callbacks and only print them to the logs. In the next version,
+  # these errors will no longer be suppressed. Instead, the errors
+  # will propagate normally just like in other Active Record callbacks.
+  config.active_record.raise_in_transactional_callbacks = true
 
   config.assets.css_compressor = CSSminify.new
   config.assets.js_compressor = :uglifier
