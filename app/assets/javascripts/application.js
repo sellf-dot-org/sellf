@@ -7,4 +7,6 @@
 //= require app/pay
 //= require app/subscribe
 
+//= require typekit
+
 //= require tablesaw

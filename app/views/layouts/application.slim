@@ -7,6 +7,7 @@ html
     link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    script src="//use.typekit.com/#{ENV['TYPEKIT']}.js" async=""
     = csrf_meta_tags
   body
     = render 'includes/header'
@@ -17,5 +18,5 @@ html
         .alert.alert-danger = flash[:error].html_safe
 
       == yield
-      = render 'includes/footer'
+    = render 'includes/footer'
   = render 'includes/scripts'
