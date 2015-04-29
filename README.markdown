@@ -26,6 +26,9 @@
 *   $18 [rental coffee](http://www.chicagoeventrentals.com/services-products/party-banquets/coffee-tea-service.aspx)
 *   $15 [projection screen](http://www.chicagoeventrentals.com/services-products/party-banquets/audio-visual-equipment-conference.aspx)
 *   $10 [two card tables](http://www.chicagoeventrentals.com/services-products/chair-table-rentals/table-rentals/complete-table-list.aspx)
+*   lav mic
+
+rental bill: 95$
 
 ### buy
 
