@@ -33,7 +33,6 @@ class DataController < ApplicationController
     fee = (amount * Rails.application.secrets.fee_percentage).to_i
 
     begin
-      binding.pry
       charge_attrs = {
         amount: amount,
         currency: 'USD',
