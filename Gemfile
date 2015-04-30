@@ -6,6 +6,7 @@ gem 'rails_12factor', '~> 0.0.3'
 gem 'dotenv-rails', '~> 2.0.1', groups: [:development, :test]
 gem 'pg', '~> 0.18.1'
 gem 'puma', '~> 2.11.2'
+gem 'dalli'
 
 gem 'uglifier', '~> 2.7.1'
 gem 'cssminify', '~> 1.0.2'

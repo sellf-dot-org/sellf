@@ -2,14 +2,15 @@ h1 = user.name
 h4 = user.email
 
 - if is_myself?
-  - if user.connected_to_stripe?
-    - # you're looking at your own 'profile', so you can
-    - # update/deauthorize/etc your Stripe account
-    = render partial: 'users/settings'
-  - else # not connected to stripe
-    - # you're looking at your own 'profile', so you can
-    - # create/connect/etc your Stripe account
-    = render partial: 'users/connect'
+  - cache ([user]) do
+    - if user.connected_to_stripe?
+      - # you're looking at your own 'profile', so you can
+      - # update/deauthorize/etc your Stripe account
+      = render partial: 'users/settings'
+    - else # not connected to stripe
+      - # you're looking at your own 'profile', so you can
+      - # create/connect/etc your Stripe account
+      = render partial: 'users/connect'
 
 
 - if user.data.any?
