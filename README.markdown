@@ -22,7 +22,7 @@ Accounts are planned but not yet implemented.
 
 You'll need:
 
-*   Ruby, with bundler
+*   MRI Ruby 2.2.2, with bundler
 *   A Stripe account, configured to use Stripe Connect
 *   A Heroku account, and the heroku toolbelt installed
 *   An s3 bucket

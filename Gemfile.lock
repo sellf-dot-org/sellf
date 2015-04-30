@@ -237,26 +237,26 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.3.1)
   bower-rails (~> 0.9.2)
-  coffee-rails
-  cssminify
-  dotenv-rails
-  haml
-  hashids_rails
+  coffee-rails (~> 4.1.0)
+  cssminify (~> 1.0.2)
+  dotenv-rails (~> 2.0.1)
+  haml (~> 4.0.6)
+  hashids_rails (~> 0.0.2)
   highline
-  jquery-rails
-  kramdown-rails
-  le
-  money-rails
-  newrelic_rpm
-  oauth2
+  jquery-rails (~> 4.0.3)
+  kramdown-rails (~> 0.1.4)
+  le (~> 2.6.2)
+  money-rails (~> 1.4.1)
+  newrelic_rpm (~> 3.11.2.286)
+  oauth2 (~> 1.0.0)
   paperclip (~> 4.2)
-  pg
-  pry-rails
-  puma
-  quiet_assets
-  rails (~> 4.2.0)
-  rails_12factor
+  pg (~> 0.18.1)
+  pry-rails (~> 0.3.4)
+  puma (~> 2.11.2)
+  quiet_assets (~> 1.1.0)
+  rails (~> 4.2.1)
+  rails_12factor (~> 0.0.3)
   sass-rails (~> 4.0.3)
-  slim-rails
-  stripe
-  uglifier
+  slim-rails (~> 3.0.1)
+  stripe (~> 1.21.0)
+  uglifier (~> 2.7.1)
