@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2'
+gem 'rails', '~> 4.2.0'
 gem 'rails_12factor'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg'
@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'hashids_rails'
 
 gem 'quiet_assets'
 

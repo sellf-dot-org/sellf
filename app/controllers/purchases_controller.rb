@@ -4,46 +4,15 @@ class PurchasesController < ApplicationController
 
   # GET /purchases
   def index
-    @purchases = current_user.purchases.all
+    if current_user.admin?
+      @purchases = Purchase.all
+    else
+      @purchases = current_user.purchases.all
+    end
   end
 
   # GET /purchases/1
   def show
-  end
-
-  # GET /purchases/new
-  def new
-    @purchase = Purchase.new
-  end
-
-  # GET /purchases/1/edit
-  def edit
-  end
-
-  # POST /purchases
-  def create
-    @purchase = Purchase.new(purchase_params)
-
-    if @purchase.save
-      redirect_to @purchase, notice: 'Purchase was successfully created.'
-    else
-      render :new
-    end
-  end
-
-  # PATCH/PUT /purchases/1
-  def update
-    if @purchase.update(purchase_params)
-      redirect_to @purchase, notice: 'Purchase was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /purchases/1
-  def destroy
-    @purchase.destroy
-    redirect_to purchases_url, notice: 'Purchase was successfully destroyed.'
   end
 
   private

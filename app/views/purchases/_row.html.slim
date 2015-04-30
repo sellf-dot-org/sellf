@@ -1,4 +1,5 @@
 tr
+  td = link_to row.to_param, row
   td = link_to row.datum.title, row.datum
   td = row.created_at
   td = link_to row.user.name, row.user

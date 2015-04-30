@@ -1,0 +1,19 @@
+p#notice = notice
+dl.dl-horizontal
+  dt title
+  dd = link_to purchase.datum.title, purchase.datum
+
+  dt id
+  dd = purchase.to_param
+
+  dt timestamp
+  dd = purchase.created_at
+
+  dt buyer
+  dd = purchase.user.name
+
+  dt seller
+  dd = purchase.datum.user.name
+
+  dt price
+  dd = purchase.amount
