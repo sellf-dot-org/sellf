@@ -4,7 +4,7 @@ gem 'rails', '~> 4.2.0'
 gem 'rails_12factor'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg'
-gem 'thin'
+gem 'puma'
 
 gem 'uglifier'
 gem 'cssminify'
