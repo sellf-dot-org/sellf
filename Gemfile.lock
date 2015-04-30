@@ -103,7 +103,6 @@ GEM
     kramdown (1.7.0)
     kramdown-rails (0.1.4)
       kramdown
-    le (2.6.2)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -247,7 +246,6 @@ DEPENDENCIES
   highline
   jquery-rails (~> 4.0.3)
   kramdown-rails (~> 0.1.4)
-  le (~> 2.6.2)
   money-rails (~> 1.4.1)
   newrelic_rpm (~> 3.11.2.286)
   oauth2 (~> 1.0.0)

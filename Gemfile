@@ -11,7 +11,6 @@ gem 'dalli'
 gem 'uglifier', '~> 2.7.1'
 gem 'cssminify', '~> 1.0.2'
 
-gem 'le', '~> 2.6.2'
 gem 'newrelic_rpm', '~> 3.11.2.286'
 
 gem 'stripe', '~> 1.21.0'
