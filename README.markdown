@@ -4,7 +4,11 @@ This is the source code for the application at [https://sellf.org](https://sellf
 
 If you want to make a website where people can sell stuff, this might be a good place to start.
 
+## Structure
+
 ![uml diagram](uml.png)
+
+Accounts are planned but not yet implemented.
 
 ## develop
 
