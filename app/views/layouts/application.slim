@@ -3,14 +3,16 @@ html
   head
     title
       = @title || "sellf.org"
-    meta name='viewport' content='width=device-width, initial-scale=1.0'
-    link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"
-    = stylesheet_link_tag 'application', media: 'all'
-    script src="//use.typekit.com/#{ENV['TYPEKIT']}.js" data-cfasync="false"
-    = javascript_include_tag 'application'
+    - cache "head" do
+      meta name='viewport' content='width=device-width, initial-scale=1.0'
+      link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"
+      = stylesheet_link_tag 'application', media: 'all'
+      script src="//use.typekit.com/#{ENV['TYPEKIT']}.js" data-cfasync="false"
+      = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    = render 'includes/header'
+    - cache [current_user] do
+      = render 'includes/header'
     .container
       - if flash[:notice]
         .alert.alert-info = flash[:notice].html_safe
@@ -18,5 +20,7 @@ html
         .alert.alert-danger = flash[:error].html_safe
 
       == yield
-    = render 'includes/footer'
-  = render 'includes/scripts'
+    - cache "footer" do
+      = render 'includes/footer'
+  - cache "scripts" do
+    = render 'includes/scripts'
