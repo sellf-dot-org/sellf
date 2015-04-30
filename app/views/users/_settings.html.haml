@@ -22,8 +22,10 @@
       - # their account in good standing
       - if @user.stripe_account_status['fields_needed'].any?
         %p
-          Before people can pay you, we'll need some information.
-        %strong This data is never shared or sold.
+          Before people can pay you, you'll need to connect your bank account.
+        %p
+          We never store this information on our servers.
+          %a(href="//stripe.com/help/security") Learn more
         %hr
         .needed
           = form_for @user, html: { class: 'form-horizontal' } do |f|

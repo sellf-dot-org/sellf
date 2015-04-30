@@ -14,7 +14,7 @@ nav.navbar.navbar-default
       ul.nav.navbar-nav.navbar-right
 
         - if current_user
-          p.navbar-text
+          div.navbar-text
             span.glyphicon.glyphicon-chevron-right
             span.hidden-xs = " Logged in as "
             a href=user_path(current_user)
