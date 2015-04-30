@@ -41,6 +41,8 @@ class DataController < ApplicationController
 
       flash[:notice] = "Charged successfully!"
 
+      Rails.logger.fatal "****** HEY A STRIPE CHARGE EVENT WENT THROUGH *******"
+
       redirect_to buy_path
 
     rescue Stripe::CardError => e
