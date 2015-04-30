@@ -33,9 +33,10 @@ class DataController < ApplicationController
     fee = (amount * Rails.application.secrets.fee_percentage).to_i
 
     begin
+      binding.pry
       charge_attrs = {
         amount: amount,
-        currency: user.currency,
+        currency: 'USD',
         source: params[:token],
         description: "Test Charge via Stripe Connect",
         application_fee: fee,
