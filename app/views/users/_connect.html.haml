@@ -1,18 +1,15 @@
 .panel.panel-primary
   .panel-body
-    - # managed accounts are in public beta
-    - # see services/stripe_managed.rb#ALLOWED
-    - if Stripe::Account.retrieve('self').country.in? StripeManaged::ALLOWED
-      #stripe-managed
-        = form_tag stripe_managed_path, method: 'POST' do
-          %input.pull-right.btn.btn-lg.disabled.btn-primary{ type: 'submit', value: 'Create' }
-          %p
-            %small Create a managed Stripe account in
-            %select.country{ name: 'country' }
-              - StripeManaged::COUNTRIES.each do |country|
-                %option{ value: country[:code] }= country[:name]
-            %br
-            %label.tos
-              %input{ type: 'checkbox', name: 'tos', checked: false }
-              I accept the
-              %a{ href: 'https://stripe.com/us/terms', target: '_blank' } Stripe Terms of Service
+    #stripe-managed
+      = form_tag stripe_managed_path, method: 'POST' do
+        %input.pull-right.btn.btn-lg.disabled.btn-primary{ type: 'submit', value: 'Create' }
+        %p
+          %small Create a managed Stripe account in
+          %select.country{ name: 'country' }
+            - StripeManaged::COUNTRIES.each do |country|
+              %option{ value: country[:code] }= country[:name]
+          %br
+          %label.tos
+            %input{ type: 'checkbox', name: 'tos', checked: false }
+            I accept the
+            %a{ href: 'https://stripe.com/us/terms', target: '_blank' } Stripe Terms of Service

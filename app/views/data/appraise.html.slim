@@ -29,6 +29,6 @@ javascript:
   window.publishable = #{Rails.application.secrets.stripe_publishable_key.to_json.html_safe};
   // window.currentUserEmail = current_user.email.to_json.html_safe;
   window.payPath = #{buy_datum_path( @datum ).to_json.html_safe};
-  window.amount = #{@amount}
-  window.stripeItemTitle = "#{@datum.title}"
-  window.stripeDestinationUserName = "#{@datum.user.name}"
+  window.amount = #{@amount};
+  window.stripeItemTitle = "#{@datum.title}";
+  window.stripeDestinationUserName = "#{@datum.user.name}";

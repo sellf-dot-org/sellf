@@ -37,7 +37,7 @@ class DataController < ApplicationController
         amount: amount,
         currency: 'USD',
         source: params[:token],
-        description: "Test Charge via Stripe Connect",
+        description: @datum.title,
         application_fee: fee,
         destination: @datum.user.stripe_user_id
       }

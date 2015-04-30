@@ -16,5 +16,6 @@ Bundler.require(*Rails.groups)
 
 module RailsStripeConnectExample
   class Application < Rails::Application
+    config.middleware.use Rack::Deflater
   end
 end
