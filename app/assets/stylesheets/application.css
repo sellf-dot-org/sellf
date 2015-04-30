@@ -17,7 +17,7 @@ html {
 
 body {
   /* set to footer height */
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 footer {
@@ -26,6 +26,7 @@ footer {
   bottom: 0;
   width: 100%;
   padding-top: 60px;
+  margin-bottom: 20px;
   /* fixed footer height here */
   height: 100px;
 }
@@ -34,4 +35,25 @@ footer {
 .navbar-default {
   border: none;
   background-color: inherit;
+}
+
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
 }

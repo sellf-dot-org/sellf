@@ -11,4 +11,4 @@ table.tablesaw.tablesaw-stack data-tablesaw-mode="stack"
       th raw
   tbody
     - table.each do |datum|
-      = render partial: "#{datum.datable.class.to_s.pluralize.downcase}/row", object: datum
+      = render partial: "#{datum.datable.class.to_s.pluralize}/row".downcase, object: datum

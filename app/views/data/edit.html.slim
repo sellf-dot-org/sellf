@@ -1,0 +1,7 @@
+h1
+  > Editing
+  em = @datum.title
+  .
+
+= render partial: "#{@datum.datable.class.to_s}s/form".downcase, object: @datum.datable
+
