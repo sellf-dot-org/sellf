@@ -1,3 +1,5 @@
+//= require typekit
+
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
@@ -6,7 +8,5 @@
 //= require app/connect
 //= require app/pay
 //= require app/subscribe
-
-//= require typekit
 
 //= require tablesaw
