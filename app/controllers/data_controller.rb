@@ -1,6 +1,6 @@
 class DataController < ApplicationController
-  before_action :set_datum, only: [:show, :edit, :update, :destroy, :buy]
-  before_action :require_user, except: [:index]
+  before_action :set_datum, only: [:show, :edit, :update, :destroy, :buy, :appraise]
+  before_action :require_user, except: [:index, :show]
 
   # GET /data
   # list of data
@@ -17,8 +17,16 @@ class DataController < ApplicationController
     redirect_to data_url, notice: 'Datum was successfully destroyed.'
   end
 
+  # this is the pre-buy page with pricing and fee info
+  def appraise
+    @user = @datum.user
+    @percentage = Rails.application.secrets.fee_percentage
+    @amount = @datum.price_cents
+    @fee = (@amount * @percentage)
+  end
+
   def buy
-    user = @datum.user
+    user = current_user
 
     amount = @datum.price_cents
 
@@ -30,12 +38,13 @@ class DataController < ApplicationController
         currency: user.currency,
         source: params[:token],
         description: "Test Charge via Stripe Connect",
-        application_fee: fee
+        application_fee: fee,
+        destination: @datum.user.stripe_user_id
       }
 
       # Use the user-to-be-paid's access token
       # to make the charge directly on their account
-      charge = Stripe::Charge.create( charge_attrs, user.stripe_secret_key )
+      charge = Stripe::Charge.create( charge_attrs, ENV['STRIPE_SECRET_KEY'] )
 
       Purchase.create(amount_cents: amount, user: current_user, datum: @datum)
 

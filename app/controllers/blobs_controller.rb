@@ -2,21 +2,12 @@ class BlobsController < ApplicationController
   before_action :set_blob, only: [:show, :edit, :update, :destroy]
   before_action :require_user
 
-  # GET /blobs
-  def index
-    @blobs = Blob.all
-  end
-
   # GET /blobs/new
   def new
     @user = current_user
     @datum = @user.data.new
     @blob = Blob.new
     @datum.datable = @blob
-  end
-
-  # GET /blobs/1/edit
-  def edit
   end
 
   # POST /blobs
@@ -27,25 +18,10 @@ class BlobsController < ApplicationController
     @datum.user = current_user
 
     if @blob.save && @datum.save
-      redirect_to @datum, notice: 'Blob was successfully created.'
+      redirect_to @datum, notice: 'File was successfully uploaded.'
     else
       render :new
     end
-  end
-
-  # PATCH/PUT /blobs/1
-  def update
-    if @blob.update(blob_params)
-      redirect_to @blob, notice: 'Blob was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /blobs/1
-  def destroy
-    @blob.destroy
-    redirect_to blobs_url, notice: 'Blob was successfully destroyed.'
   end
 
   private

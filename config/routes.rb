@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :data do
     member do
       post :buy
+      get :appraise
     end
   end
 

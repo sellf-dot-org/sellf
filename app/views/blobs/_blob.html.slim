@@ -10,15 +10,11 @@ dl.dl-horizontal
   dd = blob.datum.description
 
   dt asking price
-  dd = blob.datum.price
+  dd = blob.datum.pretty_price
 
-  - if blob.datum.user == current_user || Purchase.where(user: current_user, datum: blob.datum).exists?
-    dt raw file
-    dd = link_to "Raw File", blob.file.url
-
-  - else
-    dd
-      = form_tag buy_datum_path( blob.datum ) do
-        .indicator
-        = hidden_field_tag :token
-        button.btn.btn-primary.pay-button Buy
+  dt actions
+  dd
+    = render partial: 'blobs/actions', object: blob
+  dd
+    = link_to data_path
+      > Back to data

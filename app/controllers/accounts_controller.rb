@@ -1,11 +1,10 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
-  before_action :require_user
+  before_action :require_admin
 
   # GET /accounts
   def index
     @accounts = Account.all
-      fresh_when last_modified: @accounts.maximum(:updated_at), public: true
   end
 
   # GET /accounts/1

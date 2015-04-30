@@ -5,10 +5,7 @@ table.tablesaw.tablesaw-stack data-tablesaw-mode="stack"
       th description
       th user
       th price
-      th buy
-      th edit
-      th destroy
-      th raw
+      th actions
   tbody
     - table.each do |datum|
       = render partial: "#{datum.datable.class.to_s.pluralize}/row".downcase, object: datum

@@ -36,6 +36,6 @@ $(document).ready ->
     form.addClass( 'processing' )
 
     handler.open
-      name: 'SELLLLLLLLLLLLF'
-      description: 'WOOOODESCRIPTION'
-      amount: 1000
+      name: window.stripeDestinationUserName
+      description: window.stripeItemTitle
+      amount: window.amount

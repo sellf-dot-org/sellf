@@ -1,8 +1,8 @@
 // All this logic will automatically be available in application.js.
 
-$(function() {
+(function() {
   try {
     Typekit.load();
   }
-  catch(e) {console.warn(e)}
-});
+  catch(e) {console.warn(e);}
+})();

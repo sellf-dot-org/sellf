@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :set_purchase, only: [:show, :edit, :update, :destroy]
+  before_action :set_purchase, only: [:show]
   before_action :require_user
 
   # GET /purchases
@@ -13,6 +13,7 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/1
   def show
+    redirect 'data_url' unless current_user == @purchase.user
   end
 
   private

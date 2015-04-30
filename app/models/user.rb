@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  hash_id salt: ENV["SALT"] + "for users"
+
   has_many :data
   has_many :purchases
 

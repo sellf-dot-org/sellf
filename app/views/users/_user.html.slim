@@ -7,8 +7,6 @@ h4 = user.email
     - # you're looking at your own 'profile', so you can
     - # update/deauthorize/etc your Stripe account
     = render partial: 'users/settings'
-  - else
-    = render partial: 'users/pay'
 
 - else # not connected to stripe
   - if is_myself? && !current_user.connected_to_stripe?
@@ -27,3 +25,7 @@ h4 = user.email
 - if user.data.any?
   h3 uploaded data
   = render partial: 'data/table', object: user.data
+
+- if user == current_user && user.purchases
+  h3 your purchases
+  = render partial: 'purchases/table', object: user.purchases
