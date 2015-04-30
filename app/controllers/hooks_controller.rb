@@ -41,6 +41,8 @@ class HooksController < ApplicationController
       return
     end
 
+    Rails.logger.info "**** STRIPE EVENT **** #{event.type} **** #{event.id}"
+
     # Here we're actually done, but if you wanted to handle
     # other events (charges or invoice payment failures, etc)
     # then this is how you would do it.
@@ -72,11 +74,11 @@ class HooksController < ApplicationController
     # Of course you can handle as many event types as you need:
     #   https://stripe.com/docs/api#event_types
     when 'charge.succeeded'
-      Rails.logger.info "**** STRIPE EVENT **** #{event.type} **** #{event.id}"
+      Rails.logger.info "**** SUPER SERIOUS STRIPE EVENT **** #{event.type} **** #{event.id}"
     when 'invoice.payment_succeeded'
-      Rails.logger.info "**** STRIPE EVENT **** #{event.type} **** #{event.id}"
+      Rails.logger.info "**** SUPER SERIOUS STRIPE EVENT **** #{event.type} **** #{event.id}"
     when 'invoice.payment_failed'
-      Rails.logger.info "**** STRIPE EVENT **** #{event.type} **** #{event.id}"
+      Rails.logger.info "**** SUPER SERIOUS STRIPE EVENT **** #{event.type} **** #{event.id}"
 
     end
 
