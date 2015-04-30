@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
   # GET /accounts
   def index
     @accounts = Account.all
+      fresh_when last_modified: @accounts.maximum(:updated_at), public: true
   end
 
   # GET /accounts/1

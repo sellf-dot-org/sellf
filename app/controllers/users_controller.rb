@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # A list of all users in the database.
   # app/views/users/index.html.haml
   def index
+    require_admin
     @users = User.all
   end
 
