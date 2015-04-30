@@ -1,5 +1,9 @@
 # sellf.org
 
+This is the source code for the application at [https://sellf.org](https://sellf.org).
+
+If you want to make a website where people can sell stuff, this might be a good place to start.
+
 ![uml diagram](uml.png)
 
 ## develop
@@ -12,29 +16,37 @@
 
 ## deploy
 
-    git pull
+You'll need:
+
+*   Ruby, with bundler
+*   A Stripe account, configured to use Stripe Connect
+*   A Heroku account, and the heroku toolbelt installed
+*   An s3 bucket
+*   A typekit kit with the following faces:
+    *   inconsolata regular
+    *   chaparral pro regular
+    *   chaparral pro bold
+    *   futura pt book
+*   A unique string to use as a salt for id hashing
+
+Then do the following:
+
+    git clone git@github.com:sellf-dot-org/sellf.git
+    cd sellf
     heroku create <name>
     git push heroku
     heroku run bundle exec rake db:migrate
-    heroku config:add HOST=https://<name>.herokuapp.com
+    heroku config:add \
+        HOST=https://<name>.herokuapp.com \
+        STRIPE_PUBLISHABLE_KEY=something \
+        STRIPE_SECRET_KEY=something \
+        STRIPE_CLIENT_ID=something \
+        S3_BUCKET_NAME=something \
+        AWS_ACCESS_KEY_ID=something \
+        AWS_SECRET_ACCESS_KEY=something \
+        TYPEKIT=something \
+        SALT=something
     heroku open
-
-## todo
-
-### rent
-
-*   $18 [rental coffee](http://www.chicagoeventrentals.com/services-products/party-banquets/coffee-tea-service.aspx)
-*   $15 [projection screen](http://www.chicagoeventrentals.com/services-products/party-banquets/audio-visual-equipment-conference.aspx)
-*   $10 [two card tables](http://www.chicagoeventrentals.com/services-products/chair-table-rentals/table-rentals/complete-table-list.aspx)
-*   lav mic
-
-rental bill: 95$
-
-### buy
-
-*   $40 [buttons](http://www.busybeaver.net/)
-*   actual coffee grounds
-*   paperware
 
 ## resources
 
