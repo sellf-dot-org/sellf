@@ -1,0 +1,16 @@
+// Place all the styles related to the docs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+p img {
+  display: block;
+  background-color: rgb(51, 122, 183);
+  border: 1px solid black;
+  padding: 1%;
+  max-width: 100%;
+}
+
+p img.no-border {
+  border: none;
+  background-color: transparent;
+}

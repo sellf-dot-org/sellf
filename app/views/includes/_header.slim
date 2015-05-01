@@ -23,6 +23,8 @@ nav.navbar.navbar-default
           = link_to "Sell", sell_path
         li
           = link_to "Buy", buy_path
+        li
+          = link_to "Docs", docs_path
         - if current_user
           li
             = link_to "Log Out", destroy_sessions_path

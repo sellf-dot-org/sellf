@@ -29,6 +29,12 @@ Rails.application.routes.draw do
     end
   end
 
+
+  # docs
+  get '/docs' => 'docs#index'
+  get '/docs/facebook' => 'docs#facebook'
+
+
   # Stripe Connect endpoints
   #  - oauth flow
   get '/connect/oauth' => 'stripe#oauth', as: 'stripe_oauth'
