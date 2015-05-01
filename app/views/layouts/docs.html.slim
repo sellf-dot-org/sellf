@@ -18,15 +18,15 @@ html
         .alert.alert-info = flash[:notice].html_safe
       - if flash[:error]
         .alert.alert-danger = flash[:error].html_safe
+      - cache [request.original_fullpath] do
+        .col-md-2.col-xs-12
+          h1 Documentation
+          .panel
+            ul.nav.nav-pills.nav-stacked
+              = render 'docs/list'
 
-      .col-md-2.col-xs-12
-        h1 Documentation
-        .panel
-          ul.nav.nav-pills.nav-stacked
-            = render 'docs/list'
-
-      .col-md-6.col-md-offset-2.col-xs-12
-        == yield
+        .col-md-6.col-md-offset-2.col-xs-12
+          == yield
     - cache "footer" do
       = render 'includes/footer'
   - cache "scripts" do
