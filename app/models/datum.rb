@@ -18,7 +18,7 @@ class Datum < ActiveRecord::Base
     if description.length < cutoff
       description
     else
-      (description[0..cutoff] + '&hellip;').html_safe
+      (description[0..cutoff] + '  &hellip;').html_safe
     end
   end
 end
