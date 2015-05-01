@@ -1,4 +1,4 @@
-# Selling Your Facebook Data
+# Your Facebook Data
 
 Facebook is one of the largest players right now in the personal data collection business. If you're a Facebook user, and especially if you've been using the service for a long time, they likely have tons of information about you.
 

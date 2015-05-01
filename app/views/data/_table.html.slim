@@ -9,5 +9,5 @@
         th actions
     tbody
       - table.each do |datum|
-        - cache ("row-#{datum.id}-for-#{current_user.id}") do
+        - cache ([datum, current_user]) do
           = render partial: "#{datum.datable.class.to_s.pluralize}/row".downcase, object: datum

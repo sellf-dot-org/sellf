@@ -1,8 +1,12 @@
 # Selling Your Data
 
-When you put data up for sale on sellf.org, it can be purchased by anyone. You can choose what price it's sold for.
+When you put data up for sale on sellf.org, it can be purchased by anyone. You can <%= link_to "choose", docs_pricing_path %> what price it's sold for.
 
 A <%= (100 * ENV['FEE_PERCENTAGE'].to_f).to_i %>%  fee will be deducted from the purchase amount when sales are made.
+
+## What to Sell
+
+Only you can know what data you're comfortable selling. Perhaps start by having a look at your <%= link_to "Facebook data", docs_facebook_path %>.
 
 ## Receiving Money
 
