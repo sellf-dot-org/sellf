@@ -14,11 +14,11 @@ class Datum < ActiveRecord::Base
     "$" + price.to_s
   end
 
-  def short_description(cutoff = 20)
+  def short_description(cutoff = 40)
     if description.length < cutoff
       description
     else
-      description[0..cutoff] + "&hellip"
+      (description[0..cutoff] + '&hellip;').html_safe
     end
   end
 end
