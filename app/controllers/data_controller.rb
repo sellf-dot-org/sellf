@@ -13,6 +13,7 @@ class DataController < ApplicationController
   end
 
   def destroy
+    @datum.datable.destroy
     @datum.destroy
     redirect_to data_url, notice: 'Datum was successfully destroyed.'
   end

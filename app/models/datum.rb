@@ -4,9 +4,9 @@ class Datum < ActiveRecord::Base
   has_many :purchases
   belongs_to :user
 
-  has_many :buyers, :through => :purchases, :source => :user
+  has_many :buyers, :through => :purchases, :source => :user, dependent: :destroy
 
-  belongs_to :datable, :polymorphic => true
+  belongs_to :datable, :polymorphic => true, dependent: :destroy
 
   monetize :price_cents
 
