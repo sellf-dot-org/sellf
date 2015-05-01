@@ -1,5 +1,5 @@
 class Blob < ActiveRecord::Base
-  has_one :datum, as: :datable, dependant: :destroy
+  has_one :datum, as: :datable, dependent: :destroy
 
   accepts_nested_attributes_for :datum
 
