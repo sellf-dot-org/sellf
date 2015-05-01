@@ -8,6 +8,6 @@ h2 Available Datasets
 - if  current_user
   - if current_user.purchases.any?
     h3 Purchases:
-    = render partial: 'purchases/table', object: user.purchases
+    = render partial: 'purchases/table', object: current_user.purchases
   - else
     h3 No purchases.
