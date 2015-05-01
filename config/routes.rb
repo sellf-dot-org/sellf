@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resources :purchases
 
-  resources :blobs
-
-  resources :accounts
+  resources :blobs, only: [:new, :create, :update]
 
   root to: 'sell#welcome', as: 'sell'
   get '/buy' => 'data#index', as: 'buy'

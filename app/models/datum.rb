@@ -1,10 +1,10 @@
 class Datum < ActiveRecord::Base
   hash_id salt: ENV["SALT"] + "for data"
 
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
   belongs_to :user
 
-  has_many :buyers, :through => :purchases, :source => :user, dependent: :destroy
+  has_many :buyers, :through => :purchases, :source => :user
 
   belongs_to :datable, :polymorphic => true, dependent: :destroy
 
