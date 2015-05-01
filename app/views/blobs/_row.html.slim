@@ -1,6 +1,6 @@
 tr
   td = link_to row.title, row
-  td = row.description
+  td = row.short_description
   td = link_to row.user.name, row.user
   td = row.pretty_price
   td = render partial: 'blobs/actions', object: row.datable

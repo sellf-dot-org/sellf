@@ -1,4 +1,4 @@
-# sellf.org
+# sellf.org Intro
 
 `sellf.org` is a company that explores the ramifications of the commodification of personal data, by operating a free for-sale-by-owner data market. The premise: "Who's better equipped to sell your data than you are?"
 

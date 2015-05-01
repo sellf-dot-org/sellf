@@ -32,7 +32,11 @@ Rails.application.routes.draw do
 
   # docs
   get '/docs' => 'docs#index'
+  get '/docs/selling' => 'docs#selling'
+  get '/docs/buying' => 'docs#buying'
+  get '/docs/pricing' => 'docs#pricing'
   get '/docs/facebook' => 'docs#facebook'
+
 
 
   # Stripe Connect endpoints
