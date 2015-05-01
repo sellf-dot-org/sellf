@@ -14,9 +14,5 @@ h4 = user.email
 
 
 - if user.data.any?
-  h3 uploaded data
+  h3 Data:
   = render partial: 'data/table', object: user.data
-
-- if user == current_user && user.purchases
-  h3 your purchases
-  = render partial: 'purchases/table', object: user.purchases

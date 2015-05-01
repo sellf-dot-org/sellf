@@ -16,19 +16,20 @@ dl.dl-horizontal
   dt total
   dd = "$" + Money.new(@amount).to_s
 
-  dt do it
-  dd
-    = form_tag buy_datum_path( @datum )
-      .form-inline
-        span.indicator
-        = hidden_field_tag :token
-        button.btn.btn-xs.btn-primary.pay-button Buy
+  - if @do_it
+    dt do it
+    dd
+      = form_tag buy_datum_path( @datum )
+        .form-inline
+          span.indicator
+          = hidden_field_tag :token
+          button.btn.btn-xs.btn-primary.pay-button Buy
 
-= javascript_include_tag 'https://checkout.stripe.com/checkout.js'
-javascript:
-  window.publishable = #{Rails.application.secrets.stripe_publishable_key.to_json.html_safe};
-  // window.currentUserEmail = current_user.email.to_json.html_safe;
-  window.payPath = #{buy_datum_path( @datum ).to_json.html_safe};
-  window.amount = #{@amount};
-  window.stripeItemTitle = "#{@datum.title}";
-  window.stripeDestinationUserName = "#{@datum.user.name}";
+    = javascript_include_tag 'https://checkout.stripe.com/checkout.js'
+    javascript:
+      window.publishable = #{Rails.application.secrets.stripe_publishable_key.to_json.html_safe};
+      // window.currentUserEmail = current_user.email.to_json.html_safe;
+      window.payPath = #{buy_datum_path( @datum ).to_json.html_safe};
+      window.amount = #{@amount};
+      window.stripeItemTitle = "#{@datum.title}";
+      window.stripeDestinationUserName = "#{@datum.user.name}";

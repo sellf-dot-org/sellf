@@ -16,3 +16,10 @@
     = link_to "log in", new_sessions_path
     > to get started
 
+
+- if current_user
+  - if current_user.sales.any?
+    h3 Sales:
+    = render partial: 'purchases/table', object: current_user.sales
+  - else
+    h3 No sales.

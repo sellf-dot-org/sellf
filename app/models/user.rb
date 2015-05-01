@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   has_many :data, dependent: :destroy
   has_many :purchases, dependent: :destroy
 
-  has_many :properties, :through => :purchases, :class_name => :datum
+  has_many :sales, :through => :data, :source => :purchases
+
+  has_many :properties, :through => :purchases, :source => :datum
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true

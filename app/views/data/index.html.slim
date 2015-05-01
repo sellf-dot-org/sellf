@@ -4,3 +4,10 @@
 h2 Available Datasets
 
 = render partial: 'table', object: @data
+
+- if  current_user
+  - if current_user.purchases.any?
+    h3 Purchases:
+    = render partial: 'purchases/table', object: user.purchases
+  - else
+    h3 No purchases.

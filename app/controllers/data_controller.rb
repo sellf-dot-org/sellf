@@ -24,6 +24,12 @@ class DataController < ApplicationController
     @percentage = Rails.application.secrets.fee_percentage
     @amount = @datum.price_cents
     @fee = (@amount * @percentage)
+    if @datum.user.stripe_account_status["charges_enabled"]
+      @do_it = true
+    else
+      flash[:notice] = "#{@user.name} is not accepting sales :("
+      @do_it = false
+    end
   end
 
   def buy
