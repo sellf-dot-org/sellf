@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get '/docs/buying' => 'docs#buying'
   get '/docs/pricing' => 'docs#pricing'
   get '/docs/facebook' => 'docs#facebook'
+  get '/docs/google' => 'docs#google'
 
 
 
