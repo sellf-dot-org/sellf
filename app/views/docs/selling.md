@@ -6,7 +6,7 @@ A <%= (100 * ENV['FEE_PERCENTAGE'].to_f).to_i %>%  fee will be deducted from the
 
 ## What to Sell
 
-Only you can know what data you're comfortable selling. Perhaps start by having a look at your <%= link_to "Facebook", docs_facebook_path %> or <%= link_to "Google", docs_facebook_path %> data.
+Only you can know what data you're comfortable selling. Check out some <%= link_to "suggestions", docs_data_path %> for the kinds of things you might sell.
 
 ## Receiving Money
 
