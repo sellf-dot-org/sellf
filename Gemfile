@@ -17,7 +17,6 @@ gem 'stripe', '~> 1.21.0'
 gem 'oauth2', '~> 1.0.0'
 gem 'money-rails', '~> 1.4.1'
 
-gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
 
 gem 'bower-rails', '~>0.9.2'

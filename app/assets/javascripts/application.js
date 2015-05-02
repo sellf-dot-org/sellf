@@ -2,6 +2,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jqueryui
 //= require bootstrap-sprockets
 
 //= require app/niceties
@@ -10,3 +11,7 @@
 //= require app/subscribe
 
 //= require tablesaw
+
+//= require jquery-fileupload
+
+//= require upload

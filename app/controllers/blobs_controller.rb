@@ -4,6 +4,7 @@ class BlobsController < ApplicationController
 
   # GET /blobs/new
   def new
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @user = current_user
     @datum = @user.data.new
     @blob = Blob.new
@@ -45,6 +46,6 @@ class BlobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def blob_params
-      params.require(:blob).permit(:file, :datum, datum_attributes: [:title, :description, :price, :id])
+      params.require(:blob).permit(:blob_url, :datum, datum_attributes: [:title, :description, :price, :id])
     end
 end

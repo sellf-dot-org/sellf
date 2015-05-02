@@ -2,6 +2,8 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap": "latest",
-    "tablesaw": "latest"
+    "tablesaw": "latest",
+    "jquery-file-upload": "latest",
+    "jquery.ui": "latest"
   }
 }

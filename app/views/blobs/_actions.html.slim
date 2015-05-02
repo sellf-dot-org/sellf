@@ -1,6 +1,6 @@
 - if current_user
   - if Purchase.where(user: current_user, datum: actions.datum).exists? || current_user == actions.datum.user
-    = link_to actions.file.url
+    = link_to actions.blob_url
       .btn.btn-xs.btn-success
         > download
   - else
