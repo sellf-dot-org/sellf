@@ -23,12 +23,8 @@
 
   .form-group
     = f.label :file, class: 'control-label'
-    .input-group
-      span.input-group-btn
-        span.btn.btn-default.btn-file
-          > Browse&hellip;
-          = f.file_field :blob_url
-      input.form-control type="text" readonly=""
+      > Browse&hellip;
+    = f.file_field :blob_url
 
   .actions = f.submit class: 'form-control btn-primary'
 

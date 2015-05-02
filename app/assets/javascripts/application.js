@@ -13,5 +13,3 @@
 //= require tablesaw
 
 //= require jquery-fileupload
-
-//= require upload
