@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   # docs
   get '/docs' => 'docs#index'
+  get '/docs/data' => 'docs#data'
   get '/docs/selling' => 'docs#selling'
   get '/docs/buying' => 'docs#buying'
   get '/docs/pricing' => 'docs#pricing'

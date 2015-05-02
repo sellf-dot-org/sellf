@@ -11,3 +11,7 @@ Before selling anything personal, it's important to think through the following 
 *   What is my privacy worth?
 
 For communication-related data, remember that a conversation has two sides. You aren't just selling things *you* said, but also what your friend said.
+
+## Sellf.org fee
+
+Remember that on each purchase, sellf.org will deduct a <%= (100 * ENV['FEE_PERCENTAGE'].to_f).to_i %>% fee from the price you set here.

@@ -17,13 +17,17 @@
 
     .form-group
       = datum_form.label :price, class: 'control-label'
+        > Asking Price.
+        = link_to "Learn more", docs_selling_path
+        > about data pricing.
       .input-group
         span.input-group-addon $
         = datum_form.number_field :price, in: 0..10_000.0, step: 0.01, class: 'form-control'
 
   .form-group
     = f.label :file, class: 'control-label'
-      > Browse&hellip;
+      = link_to "Learn more", docs_data_path
+      > about finding data to upload.
     = f.file_field :blob_url
 
   .actions = f.submit class: 'form-control btn-primary'
