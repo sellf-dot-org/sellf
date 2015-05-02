@@ -3,6 +3,10 @@ h4 = user.email
 
 - if is_myself?
   - cache ["stripe settings", user] do
+    h3 Finance
+    > Sellf.org uses Stripe for payment processing.
+    = link_to "Learn more", docs_selling_path
+    > about how it works.
     - if user.connected_to_stripe?
       - # you're looking at your own 'profile', so you can
       - # update/deauthorize/etc your Stripe account
