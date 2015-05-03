@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def fee_percentage
+    "#{(100 * ENV['FEE_PERCENTAGE'].to_f) }%"
+  end
+
   # Lookup logged in user from session, if applicable.
   def current_user
     @_current_user ||= User.find_by_id( session[:user_id] )
