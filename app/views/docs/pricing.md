@@ -14,4 +14,4 @@ For communication-related data, remember that a conversation has two sides. You 
 
 ## Sellf.org fee
 
-Remember that on each purchase, sellf.org will deduct a <%= fee_percentage %>% fee from the price you set here.
+Remember that on each purchase, sellf.org will deduct a <%= fee_percentage %> fee from the price you set here.

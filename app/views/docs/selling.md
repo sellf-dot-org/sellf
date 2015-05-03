@@ -2,7 +2,7 @@
 
 When you put data up for sale on sellf.org, it can be purchased by anyone. You can <%= link_to "choose", docs_pricing_path %> what price it's sold for.
 
-A <%= fee_percentage %>%  fee will be deducted from the purchase amount when sales are made.
+A <%= fee_percentage %>  fee will be deducted from the purchase amount when sales are made.
 
 ## What to Sell
 
