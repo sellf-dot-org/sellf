@@ -1,5 +1,4 @@
-- cache (["table", table, current_user]) do
-  - cache (["table-for-user", current_user.purchases]) do
+- cache (["table", table, current_user, (current_user.purchases if current_user)]) do
     table.tablesaw.tablesaw-stack data-tablesaw-mode="stack"
       thead
         tr
@@ -10,5 +9,5 @@
           th actions
       tbody
         - table.each do |datum|
-          - cache (["row", datum, current_user, current_user.purchases]) do
+          - cache (["row", datum, current_user, (current_user.purchases if current_user)]) do
             = render partial: "#{datum.datable.class.to_s.pluralize}/row".downcase, object: datum
